@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Common Colors -->
+    <color name="white">#ffffffff</color>
+
+    <!-- App Theme Colors -->
+    <color name="stumeet_red">#ccdd0b0d</color>
+    <color name="stumeet_orange">#ccdd9313</color>
+    <color name="text_hint">#ff666666</color>
+    <color name="stumeet_red_pressed">#ffdd0b0d</color>
+    <color name="stumeet_orange_pressed">#ffdd9313</color>
+
+    <color name="transparent_gray_box">#A4FFFFFF</color>
+    <color name="gray_box_stroke">#d2d2d2</color>
+
+
+
+</resources>

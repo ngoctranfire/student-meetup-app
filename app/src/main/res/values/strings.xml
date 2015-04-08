@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StuMeets</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- Login Title Strings -->
+    <string name="login_welcome">Login to Meet Students</string>
+    <string name="join_welcome">Join Now to Start networking</string>
+    <string name="email_hint">Student Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">or</string>
+    <string name="already_signed_up">Have an Account Already? Sign in</string>
+    <string name="sign_up">Join Now!</string>
+    <string name="non_match_pass">Passwords do not match!</string>
+    <string name="account_created">Successfully Created Account!</string>
+    <string name="login_success">Login Successful</string>
+
+
+    <!--Activity Titles -->
+    <string name="title_activity_login_">Sign-in</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+
+</resources>
