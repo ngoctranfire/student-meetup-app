@@ -1,17 +1,37 @@
 package stumeets.stumeets;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.makeramen.roundedimageview.RoundedImageView;
 
 
 public class HomeActivity extends ActionBarActivity {
 
+
+    private RoundedImageView mProfilePicture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mProfilePicture = (RoundedImageView)findViewById(R.id.profile_picture);
+        mProfilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create intent to Open Image applications like Gallery, Google Photos
+                Intent galleryIntent = new
+                        Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            }
+        });
+
+
+
+
     }
 
 

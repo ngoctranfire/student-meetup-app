@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="firebase_url">https://stumeets.firebaseio.com</string>
+    <string name="user_data">user</string>
+    <string name="user_id">uid</string>
 </resources>

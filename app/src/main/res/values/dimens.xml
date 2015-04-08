@@ -22,4 +22,9 @@
     <!-- Decoration Dimensions -->
     <dimen name="rounded_corners">5dp</dimen>
 
+    <!--Profile Image Sizes -->
+    <dimen name="circle_picture_size">120dp</dimen>
+
+
+
 </resources>

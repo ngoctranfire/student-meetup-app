@@ -25,5 +25,6 @@
     <!--Activity Titles -->
     <string name="title_activity_login_">Sign-in</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_home">Home</string>
 
 </resources>
