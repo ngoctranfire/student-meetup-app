@@ -12,6 +12,8 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  */
 public class StumeetApplication extends Application {
 
+    public static Firebase mRootFireBaseRef;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -22,4 +24,6 @@ public class StumeetApplication extends Application {
         ImageLoader.getInstance().init(config);
 
     }
+
+
 }

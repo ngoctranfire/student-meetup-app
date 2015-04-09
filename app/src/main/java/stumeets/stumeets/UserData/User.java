@@ -34,6 +34,7 @@ public class User {
     private HashSet<String> userChats;
     private HashSet<String> userGroups;
     private HashSet<String> userFriends;
+    private HashSet<String> userLikes;
 
 
 
@@ -119,6 +120,15 @@ public class User {
 
         userMatches.add(userId);
     }
+
+    public HashSet<String> getUserLikes() {
+        return userLikes;
+    }
+
+    public void addToUserLikes(String userId) {
+        userLikes.add(userId);
+    }
+
     public String getUserId() {
         return userId;
     }

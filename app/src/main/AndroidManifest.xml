@@ -23,17 +23,18 @@
             android:name=".HomeActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_login_" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
             android:name=".SignUpActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_sign_up" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

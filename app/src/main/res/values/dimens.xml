@@ -24,7 +24,7 @@
 
     <!--Profile Image Sizes -->
     <dimen name="circle_picture_size">120dp</dimen>
-
+    <dimen name="match_picture_size">200dp</dimen>
 
 
 </resources>

@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
  * Created by ngoctranfire on 4/9/15.
  */
 public class BitmapConverters {
-    public static String encodeTobase64(Bitmap image)
+    public static String encodeBase64(Bitmap image)
     {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -24,4 +24,6 @@ public class BitmapConverters {
         byte[] decodedByte = Base64.decode(input, 0);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
+
+
 }

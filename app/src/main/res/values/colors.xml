@@ -12,7 +12,7 @@
 
     <color name="transparent_gray_box">#A4FFFFFF</color>
     <color name="gray_box_stroke">#d2d2d2</color>
-
+    <color name="profile_gray_bg">#444444</color>
 
 
 </resources>

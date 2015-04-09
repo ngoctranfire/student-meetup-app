@@ -82,20 +82,8 @@ public class SignUpActivity extends Activity {
                     Log.i(TAG, "Successfully created user with " + userEmail);
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.account_created), Toast.LENGTH_LONG).show();
 
-                    mRootFireBaseRef.authWithPassword(userEmail, password, new Firebase.AuthResultHandler() {
-                        @Override
-                        public void onAuthenticated(AuthData authData) {
-                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_success), Toast.LENGTH_LONG).show();
-                            storeUserData(authData.getUid(), userEmail);
-
-                        }
-
-                        @Override
-                        public void onAuthenticationError(FirebaseError firebaseError) {
-                            Toast.makeText(getApplicationContext(), firebaseError.toString(), Toast.LENGTH_LONG).show();
-
-                        }
-                    });
+                    mRootFireBaseRef.authWithPassword(userEmail, password,
+                            new LoginActivity.StoreAuthResultHandler(SignUpActivity.this, mRootFireBaseRef, true, userEmail));
 
                     Intent toHome = new Intent(getApplicationContext(), HomeActivity.class);
                     Log.e(TAG, stringObjectMap.toString());
@@ -112,10 +100,5 @@ public class SignUpActivity extends Activity {
         }
     }
 
-    private void storeUserData(String uid, String email) {
-        Firebase usersRef = mRootFireBaseRef.child(getResources().getString(R.string.user_data));
-        User newUser = new User(uid, email, ServerValue.TIMESTAMP);
-        usersRef.child(uid).setValue(newUser);
-    }
 
 }
