@@ -11,8 +11,17 @@ import stumeets.stumeets.ChatData.MessageData.Message;
 /**
  * Created by ngoctranfire on 4/9/15.
  */
+
+/**
+ * This class is the object representation of a Chat, which includes the dateCreated. The date created
+ * is a map, which is necessary for Firebase to represent the date of the object and take care of the translation
+ * from system to system and display it to the user correctly.
+ * The chat also has a unique chatId, which is used to uniquely identify the chat.
+ * The chat has a list of chatMessages. That contains a list of message objects
+ * The chat also contains a list of userIds in the chat, which are foreign keys to the chat Messages.
+ */
 public class Chat {
-    private Map<String, String> dateCreated;
+    private Map<String, String> dateCreated; //Firebase time object
     private String chatId;
     private ArrayList<Message> chatMessages;
     private HashSet<String> usersInChat;

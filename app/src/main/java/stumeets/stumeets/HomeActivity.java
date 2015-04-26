@@ -1,9 +1,11 @@
 package stumeets.stumeets;
 
-import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -29,7 +31,11 @@ import java.util.Map;
 import stumeets.stumeets.UserData.User;
 import stumeets.stumeets.Utility.BitmapConverters;
 
-
+/**
+ * This is the main class of the application, the home activity, which is used to represent the
+ * core features of the app after the login and the signup screens have finished. It interacts
+ * with the database the most in the application.
+ */
 public class HomeActivity extends ActionBarActivity {
 
     private static final String TAG = ActionBarActivity.class.getSimpleName();
@@ -98,8 +104,35 @@ public class HomeActivity extends ActionBarActivity {
         mGroupsCount = (TextView)findViewById(R.id.groups_count);
         mGroupsCount.setText("2 Groups");
 
+        setupHighlightsView();
+
     }
 
+    /**
+     * Sets up fragments to call on the highlights view to show groups that should be
+     * highlighted or events that should be highlighted.
+     */
+    private void setupHighlightsView() {
+        Configuration config = getResources().getConfiguration();
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            HighlightsFragment ls_fragment = new HighlightsFragment();
+            fragmentTransaction.replace(R.id.ls_fragment, ls_fragment);
+        } else {
+            HighlightsFragmentPortrait p_fragment = new HighlightsFragmentPortrait();
+            fragmentTransaction.replace(R.id.p_fragment, p_fragment);
+        }
+        fragmentTransaction.commit();
+    }
+
+    /**
+     * A function that allows the user to pick an image from their phone
+     * and then upload it to firebase. This image will replace their default blank image.
+     *
+     */
     private void startPickImage() {
         Intent pickImageIntent = new Intent();
 
@@ -144,6 +177,7 @@ public class HomeActivity extends ActionBarActivity {
     /**
      *
      * @param bitmap - the bitmap
+     * Called to add the picture to the Database, the base 64 encoding of it.
      */
     private void addPictureToDatabase(Bitmap bitmap) {
         Resources myResource = getResources();

@@ -5,6 +5,14 @@ import java.util.Map;
 /**
  * Created by ngoctranfire on 4/9/15.
  */
+
+/**
+ * This class represents a message and stores the messageID, which is the unique identifier.
+ * The message needs to contain the userID, the message Time, or the group of User ID the user is
+ * sending the message to.
+ * This class is used to represent both a group message and a user message.
+ * A message is encapsulated in this object.
+ */
 public class Message {
 
     private String messageId ;

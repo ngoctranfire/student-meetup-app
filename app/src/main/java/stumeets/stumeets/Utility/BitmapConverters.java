@@ -9,6 +9,11 @@ import java.io.ByteArrayOutputStream;
 /**
  * Created by ngoctranfire on 4/9/15.
  */
+
+/**
+ * This is a utility module and this is a specific module for handling decoding and encoding
+ * of iamges to store in Firebase.
+ */
 public class BitmapConverters {
     public static String encodeBase64(Bitmap image)
     {

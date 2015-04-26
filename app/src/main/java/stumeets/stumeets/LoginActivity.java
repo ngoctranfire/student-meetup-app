@@ -20,7 +20,9 @@ import java.lang.ref.WeakReference;
 
 import stumeets.stumeets.UserData.User;
 
-
+/**
+ * This is the activity that is used to represent the login activity and the UI interactions.
+ */
 public class LoginActivity extends Activity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
@@ -70,7 +72,10 @@ public class LoginActivity extends Activity {
     }
 
 
-
+    /**
+     * A Result Handler class that implements Firebase's Results for connecting to the user
+     * database.
+     */
     public static class StoreAuthResultHandler implements Firebase.AuthResultHandler{
 
         private final WeakReference<Activity> mActivity;
@@ -91,6 +96,11 @@ public class LoginActivity extends Activity {
             this.userEmail = userEmail;
         }
 
+        /**
+         * Stores the user data into firebase on a successful creation of the user.
+         * @param uid - the uid of the user.
+         * @param email - the email of the user.
+         */
         private void storeUserData(String uid, String email) {
             Activity activity = mActivity.get();
             Firebase usersRef = mRootFireBaseRef.get().child(activity.getResources().getString(R.string.user_data_url));
@@ -100,7 +110,10 @@ public class LoginActivity extends Activity {
         }
 
 
-
+        /**
+         * This is a firebase class function we
+         * @param authData - the representation of the data returned by firebase!
+         */
         @Override
         public void onAuthenticated(AuthData authData) {
             Log.i(TAG, "User creation successful!: With Email!");

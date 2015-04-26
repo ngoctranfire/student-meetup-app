@@ -14,6 +14,14 @@ import stumeets.stumeets.GroupData.Group;
  * Created by ngoctranfire on 4/9/15.
  */
 
+/**
+ * This is a user object is an object to represent the user fields in the database.
+ * A user has a date Created, which is a firebase representation of a date.
+ * They have a unique identifier, the userID
+ * They also include an email, which is unique to the user
+ * The other fields can all be looked up in the UML diagram attached.
+ *
+ */
 public class User {
     public static final boolean MALE = true;
     public static final boolean FEMALE = false;

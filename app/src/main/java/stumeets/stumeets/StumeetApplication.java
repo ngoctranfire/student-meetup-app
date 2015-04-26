@@ -10,6 +10,12 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 /**
  * Created by ngoctranfire on 4/7/15.
  */
+
+/**
+ * This extends the regular android application and does the basic image configurations for
+ * the Universal Image Loader
+ * This also initiates the Firebase connection to the android application and gets it ready for use.
+ */
 public class StumeetApplication extends Application {
 
     public static Firebase mRootFireBaseRef;

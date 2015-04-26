@@ -68,6 +68,10 @@ public class SignUpActivity extends Activity {
 
     }
 
+    /***
+     * Triggered by a button in the UI, this will then create an account with the user's name and
+     * password input!
+     */
     private void signupAccount() {
         final String userEmail = mEmailInput.getText().toString();
         final String password = mPasswordInput.getText().toString();
